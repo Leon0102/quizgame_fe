@@ -6,12 +6,14 @@ import TextFieldComp from "../components/TextFieldComp";
 import useAxios from "../hooks/useAxios";
 
 
-const Settings = () => {
-    const { response, error, loading } = useAxios({ url: "/api_category.php" })
+const Settings = () =>
+{
+    const { response, error, loading } = useAxios({ url: "/api/category" })
     const navigate = useNavigate()
     console.log(response);
 
-    if (loading) {
+    if (loading)
+    {
         return (
             <Box mt={20}>
                 <CircularProgress />
@@ -19,7 +21,8 @@ const Settings = () => {
         )
     }
 
-    if (error) {
+    if (error)
+    {
         return (
             <Typography variant="h6" mt={20} color="red"> Something Went Wrong!
             </Typography>
@@ -37,7 +40,8 @@ const Settings = () => {
         { id: "boolean", name: "True/False" },
     ]
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) =>
+    {
         e.preventDefault();
         navigate("/questions");
     }
